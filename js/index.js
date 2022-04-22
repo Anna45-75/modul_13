@@ -32,8 +32,9 @@ function display() {
   // чтобы заполнить актуальными данными из fruits
   fruitsList.innerHTML = '';
   for (let i = 0; i < fruits.length; i++) {
+    let jsonF = JSON.stringify(fruits[i]);
     let li = document.createElement('li');
-    li.innerHTML = fruitsList;
+    li.innerHTML = '<li class="fruit__item fruit_violet"><div class="fruit__info">' + jsonF + '</div></li>';
     fruitsList.appendChild(li);
   }
 };
@@ -44,7 +45,6 @@ function display() {
 
 // первая отрисовка карточек
 
-document.writeln(fruits);
 display();
 
 /*** ПЕРЕМЕШИВАНИЕ ***/
