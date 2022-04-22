@@ -26,14 +26,14 @@ let fruits = JSON.parse(fruitsJSON);
 /*** ОТОБРАЖЕНИЕ ***/
 
 // отрисовка карточек
-fruitsList.parentNode.removeChild(fruitsList);
+
 function display() {
   // TODO: очищаем fruitsList от вложенных элементов,
   // чтобы заполнить актуальными данными из fruits
-
+  fruitsList.innerHTML = '';
   for (let i = 0; i < fruits.length; i++) {
     let li = document.createElement('li');
-    li.innerHTML = fruits;
+    li.innerHTML = fruitsList;
     fruitsList.appendChild(li);
   }
 };
@@ -43,6 +43,8 @@ function display() {
 
 
 // первая отрисовка карточек
+
+document.writeln(fruits);
 display();
 
 /*** ПЕРЕМЕШИВАНИЕ ***/
