@@ -68,9 +68,9 @@ function random(n) {
 
 function shuffleFruits() {
   for (let i = 0; i < fruits.length; i++) {
-    var j = random(fruits.length);
-    var k = random(fruits.length);
-    var t = fruits[j];
+    let j = random(fruits.length);
+    let k = random(fruits.length);
+    let t = fruits[j];
     fruits[j] = fruits[k];
     fruits[k] = t;
   }
