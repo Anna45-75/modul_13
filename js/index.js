@@ -62,16 +62,19 @@ display();
 // генерация случайного числа в заданном диапазоне
 
 // перемешивание массива
+function random(n) {
+  return Math.floor(Math.random() * Math.floor(n));
+};
+
 function shuffleFruits() {
-
-  function RandArray(array) {
-    let rand = Math.random() * array.length | 0;
-    let result = array[rand];
-    return result;
+  for (let i = 0; i < fruits.length; i++) {
+    var j = random(fruits.length);
+    var k = random(fruits.length);
+    var t = fruits[j];
+    fruits[j] = fruits[k];
+    fruits[k] = t;
   }
-  let result = RandArray(fruits);
-  console.log(result)
-
+  return fruits;
 };
 
 shuffleButton.addEventListener('click', () => {
