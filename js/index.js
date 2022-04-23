@@ -57,25 +57,18 @@ display();
 /*** ПЕРЕМЕШИВАНИЕ ***/
 
 // генерация случайного числа в заданном диапазоне
-const getRandomInt = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
 
 // перемешивание массива
-const shuffleFruits = () => {
-  let result = [];
+function shuffleFruits() {
 
-  // ATTENTION: сейчас при клике вы запустите бесконечный цикл и браузер зависнет
-  while (fruits.length > 0) {
-    // TODO: допишите функцию перемешивания массива
-    //
-    // Подсказка: находим случайный элемент из fruits, используя getRandomInt
-    // вырезаем его из fruits и вставляем в result.
-    // ex.: [1, 2, 3], [] => [1, 3], [2] => [3], [2, 1] => [], [2, 1, 3]
-    // (массив fruits будет уменьшатся, а result заполняться)
+  function RandArray(array) {
+    let rand = Math.random() * array.length | 0;
+    let result = array[rand];
+    return result;
   }
+  let result = RandArray(fruits);
+  console.log(result)
 
-  fruits = result;
 };
 
 shuffleButton.addEventListener('click', () => {
