@@ -27,15 +27,22 @@ let fruits = JSON.parse(fruitsJSON);
 
 // отрисовка карточек
 
+let arrStyle = ['fruit_violet', 'fruit_green', 'fruit_carmazin', 'fruit_yellow', 'fruit_lightbrown'];
+
+
 function display() {
   // TODO: очищаем fruitsList от вложенных элементов,
   // чтобы заполнить актуальными данными из fruits
   fruitsList.innerHTML = '';
   for (let i = 0; i < fruits.length; i++) {
-    let jsonF = JSON.stringify(fruits[i]);
-    let li = document.createElement('li');
-    li.innerHTML = '<li class="fruit__item fruit_violet"><div class="fruit__info">' + jsonF + '</div></li>';
-    fruitsList.appendChild(li);
+    for (let m = 0; m < arrStyle.length; m++) {
+      let styleF = JSON.stringify(arrStyle[m]);
+      let jsonF = JSON.stringify(fruits[i]);
+      let li = document.createElement('li');
+      li.innerHTML = '<li class=' + styleF + '><div class="fruit__info">' + jsonF + '</div></li>';
+      fruitsList.appendChild(li);
+    }
+
   }
 };
 
