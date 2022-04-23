@@ -36,10 +36,13 @@ function display() {
   fruitsList.innerHTML = '';
   for (let i = 0; i < fruits.length; i++) {
     for (let m = 0; m < arrStyle.length; m++) {
+      if (m == i) break;
       let styleF = JSON.stringify(arrStyle[m]);
       let jsonF = JSON.stringify(fruits[i]);
+      let regular = /,/g;
+      let result = jsonF.replace(regular, "<br>");
       let li = document.createElement('li');
-      li.innerHTML = '<li class=' + styleF + '><div class="fruit__info">' + jsonF + '</div></li>';
+      li.innerHTML = '<li class=' + styleF + '><div class="fruit__info">' + result + '</div></li>';
       fruitsList.appendChild(li);
     }
 
