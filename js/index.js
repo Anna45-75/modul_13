@@ -62,14 +62,14 @@ display();
 // генерация случайного числа в заданном диапазоне
 
 // перемешивание массива
-function random(n) {
+function getRandomInt(n) {
   return Math.floor(Math.random() * Math.floor(n));
 };
 
 function shuffleFruits() {
   for (let i = 0; i < fruits.length; i++) {
-    let j = random(fruits.length);
-    let k = random(fruits.length);
+    let j = getRandomInt(fruits.length);
+    let k = getRandomInt(fruits.length);
     let t = fruits[j];
     fruits[j] = fruits[k];
     fruits[k] = t;
@@ -85,10 +85,14 @@ shuffleButton.addEventListener('click', () => {
 /*** ФИЛЬТРАЦИЯ ***/
 
 // фильтрация массива
-const filterFruits = () => {
-  fruits.filter((item) => {
-    // TODO: допишите функцию
-  });
+let begin = document.querySelector('.minweight__input').value;
+let end = document.querySelector('.maxweight__input').value;
+let [kind, color, weight] = fruits;
+
+function filterFruits() {
+  for (let i = 0; i < fruits.length; i++) {
+    let filtered = fruits.filter(function (s) { return s.weight.value.includes(begin); });
+  }
 };
 
 filterButton.addEventListener('click', () => {
